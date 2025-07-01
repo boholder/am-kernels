@@ -13,6 +13,9 @@ char str1[] = "Hello";
 char str[20];
 
 int main() {
+  check(strlen("") == 0);
+  check(strlen(s[0]) == 38);
+
 	check(strcmp(s[0], s[2]) == 0);
 	check(strcmp(s[0], s[1]) < 0);
 	check(strcmp(s[0] + 1, s[1] + 1) < 0);
