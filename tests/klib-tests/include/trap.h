@@ -12,7 +12,7 @@ void check(bool cond) {
 }
 
 #define N 32
-uint8_t inc[N];
+uint8_t inc[N]; // 1, 2, 3, ... 32
 
 __attribute__((noinline))
 void reset() {
