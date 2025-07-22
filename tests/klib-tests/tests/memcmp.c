@@ -30,4 +30,9 @@ int main()
       }
     }
   }
+
+  // comparison won't stop at zero bytes
+  uint8_t a[4] = {1, 0, 0, 1};
+  uint8_t b[5] = {1, 0, 0, 0, 1};
+  assert(memcmp(a, b, 4) > 0);
 }
