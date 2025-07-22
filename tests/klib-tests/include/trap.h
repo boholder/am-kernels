@@ -6,6 +6,12 @@
 #include "klib.h"
 #include <stdint.h>
 
+// strlen() for string constant
+#define STRLEN(CONST_STR) (sizeof(CONST_STR) - 1)
+
+// calculate the length of an array
+#define ARRLEN(arr) (int) (sizeof(arr) / sizeof(arr[0]))
+
 __attribute__((noinline))
 void check(bool cond) {
   if (!cond) halt(1);
@@ -38,6 +44,15 @@ void check_eq(int l, int r, int val) {
   for (i = l; i < r; i ++) {
     assert(inc[i] == val);
   }
+}
+
+__attribute__((noinline)) char* rand_str(char* input, int len)
+{
+  for (int i = 0; i < len; i++) {
+    input[i] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[rand() % 62];
+  }
+  input[len] = '\0';
+  return input;
 }
 
 #endif
