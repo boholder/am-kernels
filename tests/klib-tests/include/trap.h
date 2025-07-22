@@ -14,6 +14,7 @@ void check(bool cond) {
 #define N 32
 uint8_t data[N];
 
+__attribute__((noinline))
 void reset() {
   int i;
   for (i = 0; i < N; i ++) {
@@ -22,6 +23,7 @@ void reset() {
 }
 
 // 检查[l,r)区间中的值是否依次为val, val + 1, val + 2...
+__attribute__((noinline))
 void check_seq(int l, int r, int val) {
   int i;
   for (i = l; i < r; i ++) {
@@ -30,6 +32,7 @@ void check_seq(int l, int r, int val) {
 }
 
 // 检查[l,r)区间中的值是否均为val
+__attribute__((noinline))
 void check_eq(int l, int r, int val) {
   int i;
   for (i = l; i < r; i ++) {
