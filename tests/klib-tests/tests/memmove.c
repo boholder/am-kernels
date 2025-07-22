@@ -12,7 +12,7 @@ int main()
   for (l = 0; l < N; l++) {
     for (r = l + 1; r <= N; r++) {
       reset();
-      memmove(data + l, src_arr, r - l);
+      memmove(inc + l, src_arr, r - l);
       check_seq(0, l, 1);
       check_seq(l, r, 40);
       check_seq(r, N, r + 1);
@@ -23,7 +23,7 @@ int main()
   for (l = 0; l < N; l++) {
     for (r = l + 1; r <= N - 1; r++) {
       reset();
-      memmove(data + l, data + l + 1, r - l);
+      memmove(inc + l, inc + l + 1, r - l);
       check_seq(0, l, 1);
       check_seq(l, r, l + 2);
       check_seq(r, N, r + 1);
